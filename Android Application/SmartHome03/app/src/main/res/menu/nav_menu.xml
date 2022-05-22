@@ -7,18 +7,14 @@
 
         <item
             android:id="@+id/item1"
-            android:title="메인 화면" />
+            android:title="메인" />
 
         <item
             android:id="@+id/item2"
-            android:title="블루투스 기기 검색" />
+            android:title="블루투스" />
 
         <item
             android:id="@+id/item3"
-            android:title="블루투스 등록 기기" />
-
-        <item
-            android:id="@+id/item4"
             android:title="설정" />
     </group>
 </menu>

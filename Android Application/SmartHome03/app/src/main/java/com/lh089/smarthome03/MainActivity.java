@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private final int Fragment1 = 1;
     private final int Fragment2 = 2;
     private final int Fragment3 = 3;
-    private final int Fragment4 = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (item.getItemId() == R.id.item1) {
                     fragmentView(Fragment1);
-                }else if (item.getItemId() == R.id.item2) {
+                } else if (item.getItemId() == R.id.item2) {
                     fragmentView(Fragment2);
                 } else if (item.getItemId() == R.id.item3) {
                     fragmentView(Fragment3);
-                } else if (item.getItemId() == R.id.item4) {
-                    fragmentView(Fragment4);
                 }
 
                 DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -97,11 +94,6 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 Fragment3 fragment3 = new Fragment3();
                 transaction.replace(R.id.main_frame, fragment3);
-                transaction.commit();
-                break;
-            case 4:
-                Fragment4 fragment4 = new Fragment4();
-                transaction.replace(R.id.main_frame, fragment4);
                 transaction.commit();
                 break;
         }

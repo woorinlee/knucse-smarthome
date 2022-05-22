@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tab1"
+        android:enabled="true"
+        app:showAsAction="ifRoom"
+        android:title="기기 검색"
+        android:icon="@drawable/ic_search_96" />
+
+    <item
+        android:id="@+id/tab2"
+        app:showAsAction="ifRoom"
+        android:title="등록 기기"
+        android:icon="@drawable/ic_list_96"/>
+</menu>
