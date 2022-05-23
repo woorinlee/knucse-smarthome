@@ -115,6 +115,7 @@ public class Fragment2 extends Fragment {
                 transaction.commit();
                 break;
             case 2:
+                Toast.makeText(getActivity(), "블루투스 등록 기기 출력", Toast.LENGTH_SHORT).show();
                 Fragment2_2 fragment2_2 = new Fragment2_2();
                 transaction.replace(R.id.sub_frame, fragment2_2);
                 transaction.commit();

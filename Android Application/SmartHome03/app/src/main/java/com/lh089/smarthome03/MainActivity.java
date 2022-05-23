@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -29,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            requestPermissions(
+                    new String[]{
+                            Manifest.permission.BLUETOOTH,
+                            Manifest.permission.BLUETOOTH_SCAN,
+                            Manifest.permission.BLUETOOTH_ADVERTISE,
+                            Manifest.permission.BLUETOOTH_CONNECT
+                    }, 1);
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions( new String[]{ Manifest.permission.BLUETOOTH }, 1);
+        }
 
         fragmentView(Fragment1);
 
@@ -51,16 +64,6 @@ public class MainActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                /*switch (item.getItemId()) {
-                    case R.id.item1:
-                        //Toast.makeText(getApplicationContext(), "메뉴아이템 1 선택", Toast.LENGTH_SHORT).show();
-                        fragmentTransaction.replace(R.id.main_frame, fragment1);
-                    case R.id.item2:
-                        fragmentTransaction.replace(R.id.main_frame, fragment2);
-                    case R.id.item3:
-                        fragmentTransaction.replace(R.id.main_frame, fragment3);
-                }
-                fragmentTransaction.commit();*/
 
                 if (item.getItemId() == R.id.item1) {
                     fragmentView(Fragment1);

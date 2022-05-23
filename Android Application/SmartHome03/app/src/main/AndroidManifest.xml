@@ -4,6 +4,9 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -18,7 +21,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="Test SmartHome 01"
+            android:label="SmartHome03"
             android:theme="@style/Theme.SmartHome03.NoActionBar">>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
