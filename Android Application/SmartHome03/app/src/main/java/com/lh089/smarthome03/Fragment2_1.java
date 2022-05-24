@@ -57,6 +57,7 @@ public class Fragment2_1 extends Fragment {
         deviceList.setAdapter(deviceDataAdapter);*/
 
         btArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_2, R.id.stateTv);
+        btArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         deviceAddressArray = new ArrayList<>();
         deviceList.setAdapter(btArrayAdapter);
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -74,7 +75,6 @@ public class Fragment2_1 extends Fragment {
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Test", Toast.LENGTH_SHORT).show();
                 if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
                     //    ActivityCompat#requestPermissions
@@ -95,7 +95,9 @@ public class Fragment2_1 extends Fragment {
                             deviceAddressArray.clear();
                         }
                         IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+                        Toast.makeText(getActivity(), "5", Toast.LENGTH_SHORT).show();
                         requireActivity().registerReceiver(receiver, filter);
+                        Toast.makeText(getActivity(), "6", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(getActivity(), "블루투스가 켜지지 않았습니다.", Toast.LENGTH_SHORT).show();
                     }
@@ -132,6 +134,6 @@ public class Fragment2_1 extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        requireActivity().unregisterReceiver(receiver);
+        //requireActivity().unregisterReceiver(receiver);
     }
 }

@@ -5,9 +5,13 @@ import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
+import android.content.ClipData;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -22,6 +26,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -82,21 +87,59 @@ public class Fragment2 extends Fragment {
             startActivityForResult(intent, BLUETOOTH_REQUEST_CODE);
         }*/
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (getActivity().checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                builder.setPositiveButton(android.R.string.ok, null);
+
+                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN}, 2 );
+                    }
+                });
+                builder.show();
+            }
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (getActivity().checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+                builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+                builder.setMessage("어플리케이션이 블루투스를 연결 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+                builder.setPositiveButton(android.R.string.ok, null);
+
+                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+
+                    @Override
+                    public void onDismiss(DialogInterface dialog) {
+                        requestPermissions(new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 3 );
+                    }
+                });
+                builder.show();
+            }
+        }
+
         fragment2_1 = new Fragment2_1();
         fragment2_2 = new Fragment2_2();
 
         childFragmentView(Fragment2_1);
 
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
-
         bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.bottom_navigation_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.tab1) {
-                    childFragmentView(Fragment2_1);
-                } else if (item.getItemId() == R.id.tab2) {
-                    childFragmentView(Fragment2_2);
+                switch (item.getItemId()) {
+                    case R.id.tab1:
+                        childFragmentView(Fragment2_1);
+                        return true;
+                    case R.id.tab2:
+                        childFragmentView(Fragment2_2);
+                        return true;
                 }
                 return false;
             }

@@ -12,4 +12,9 @@
         android:layout_height="wrap_content"
         android:text="프래그먼트 2-2"
         android:textSize="30dp" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/devicePairedList" />
 </LinearLayout>
