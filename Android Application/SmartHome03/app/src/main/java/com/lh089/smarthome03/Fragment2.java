@@ -1,26 +1,24 @@
 package com.lh089.smarthome03;
 
 import android.Manifest;
-import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
 import android.content.BroadcastReceiver;
-import android.content.ClipData;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,140 +27,212 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
 
 public class Fragment2 extends Fragment {
 
-    //블루투스 요청 액티비티 코드
-    final static int BLUETOOTH_REQUEST_CODE = 100;
+    String TAG = "Fragment2";
+    UUID BT_MODULE_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
-    BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-
-    TextView stateTv;
-    Button searchBtn;
+    TextView bluetoothTv, stateTv;
+    Button pairedDeviceBtn, searchBtn;
     ListView deviceList;
-    List<Map<String, String>> deviceData;
-    SimpleAdapter deviceDataAdapter;
 
-    Fragment2_1 fragment2_1;
-    Fragment2_2 fragment2_2;
+    BluetoothAdapter btAdapter;
+    Set<BluetoothDevice> pairedDevices;
+    ArrayAdapter<String> btArrayAdapter;
+    ArrayList<String> deviceAddressArray;
 
-    BottomNavigationView bottomNavigationView;
-
-    private final int Fragment2_1 = 1;
-    private final int Fragment2_2 = 2;
+    private final static int REQUEST_ENABLE_BT = 1;
+    BluetoothSocket btSocket = null;
+    ConnectedThread connectedThread;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_2, container, false);
-        // ct = container.getContext();
 
-        /*stateTv = (TextView) view.findViewById(R.id.stateTv);
+        bluetoothTv = (TextView) view.findViewById(R.id.bluetoothTv);
+        stateTv = (TextView) view.findViewById(R.id.stateTv);
+        pairedDeviceBtn = (Button) view.findViewById(R.id.pairedDeviceBtn);
         searchBtn = (Button) view.findViewById(R.id.searchBtn);
         deviceList = (ListView) view.findViewById(R.id.deviceList);
 
-        deviceData = new ArrayList<>();
-        deviceDataAdapter = new SimpleAdapter(getActivity(), deviceData, android.R.layout.simple_list_item_2, new String[]{"name", "address"}, new int[]{android.R.id.text1, android.R.id.text2});
-        deviceList.setAdapter(deviceDataAdapter);
+        String[] permission_list = {
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+        };
+        ActivityCompat.requestPermissions(getActivity(), permission_list, 1);
 
-        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        IntentFilter startFilter = new IntentFilter();
+        startFilter.addAction(BluetoothAdapter.ACTION_STATE_CHANGED);
+        getActivity().registerReceiver(receiver, startFilter);
 
-        // 블루투스 미지원 시 버튼 비활성화
-        if (mBluetoothAdapter == null) {
-            Toast.makeText(getActivity(), "블루투스를 지원하지 않는 단말기 입니다.", Toast.LENGTH_SHORT).show();
-            searchBtn.setEnabled(false);
+        IntentFilter searchFilter = new IntentFilter();
+        searchFilter.addAction(BluetoothAdapter.ACTION_DISCOVERY_STARTED);
+        searchFilter.addAction(BluetoothDevice.ACTION_FOUND);
+        searchFilter.addAction(BluetoothAdapter.ACTION_DISCOVERY_FINISHED);
+        getActivity().registerReceiver(receiver, searchFilter);
+
+        btAdapter = BluetoothAdapter.getDefaultAdapter();
+        if (!btAdapter.isEnabled()) {
+            Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+            startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
 
-        // 블루투스 꺼져있을 경우 활성화 요청
-        if (!mBluetoothAdapter.isEnabled()) {
-            Intent intent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(intent, BLUETOOTH_REQUEST_CODE);
-        }*/
+        btArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1);
+        deviceAddressArray = new ArrayList<>();
+        deviceList.setAdapter(btArrayAdapter);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            if (getActivity().checkSelfPermission(Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        deviceList.setOnItemClickListener(new myOnItemClickListener());
 
-                builder.setTitle("블루투스에 대한 액세스가 필요합니다");
-                builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
-                builder.setPositiveButton(android.R.string.ok, null);
-
-                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN}, 2 );
-                    }
-                });
-                builder.show();
-            }
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            if (getActivity().checkSelfPermission(Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
-                final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
-                builder.setTitle("블루투스에 대한 액세스가 필요합니다");
-                builder.setMessage("어플리케이션이 블루투스를 연결 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
-                builder.setPositiveButton(android.R.string.ok, null);
-
-                builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
-
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        requestPermissions(new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 3 );
-                    }
-                });
-                builder.show();
-            }
-        }
-
-        fragment2_1 = new Fragment2_1();
-        fragment2_2 = new Fragment2_2();
-
-        childFragmentView(Fragment2_1);
-
-        bottomNavigationView = (BottomNavigationView) view.findViewById(R.id.bottom_navigation_view);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        pairedDeviceBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.tab1:
-                        childFragmentView(Fragment2_1);
-                        return true;
-                    case R.id.tab2:
-                        childFragmentView(Fragment2_2);
-                        return true;
+            public void onClick(View view) {
+                btArrayAdapter.clear();
+                if (deviceAddressArray != null && !deviceAddressArray.isEmpty()) {
+                    deviceAddressArray.clear();
                 }
-                return false;
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    onBluetoothConnectAccess();
+                    return;
+                }
+                pairedDevices = btAdapter.getBondedDevices();
+                if (pairedDevices.size() > 0) {
+                    for (BluetoothDevice device : pairedDevices) {
+                        String deviceName = device.getName();
+                        String deviceHardwareAddress = device.getAddress();
+                        btArrayAdapter.add(deviceName);
+                        deviceAddressArray.add(deviceHardwareAddress);
+                    }
+                }
+            }
+        });
+
+        searchBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                searchBtn.setEnabled(false);
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_SCAN) != PackageManager.PERMISSION_GRANTED) {
+                    onBluetoothScanAccess();
+                    return;
+                }
+                if (btAdapter.isDiscovering()) {
+                    btAdapter.cancelDiscovery();
+                }
+                btAdapter.startDiscovery();
             }
         });
 
         return view;
     }
 
-    private void childFragmentView(int fragment) {
-        FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+    public void onBluetoothScanAccess() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+        builder.setMessage("어플리케이션이 블루투스를 감지 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+        builder.setPositiveButton(android.R.string.ok, null);
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                requestPermissions(new String[]{Manifest.permission.BLUETOOTH_SCAN}, 2);
+            }
+        });
+        builder.show();
+    }
 
-        switch (fragment) {
-            case 1:
-                Fragment2_1 fragment2_1 = new Fragment2_1();
-                transaction.replace(R.id.sub_frame, fragment2_1);
-                transaction.commit();
-                break;
-            case 2:
-                Toast.makeText(getActivity(), "블루투스 등록 기기 출력", Toast.LENGTH_SHORT).show();
-                Fragment2_2 fragment2_2 = new Fragment2_2();
-                transaction.replace(R.id.sub_frame, fragment2_2);
-                transaction.commit();
-                break;
+    public void onBluetoothConnectAccess() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("블루투스에 대한 액세스가 필요합니다");
+        builder.setMessage("어플리케이션이 블루투스를 연결 할 수 있도록 위치 정보 액세스 권한을 부여하십시오.");
+        builder.setPositiveButton(android.R.string.ok, null);
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+                requestPermissions(new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 3);
+            }
+        });
+        builder.show();
+    }
+
+    private final BroadcastReceiver receiver = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            switch (action) {
+                case BluetoothAdapter.ACTION_DISCOVERY_STARTED:
+                    btArrayAdapter.clear();
+                    stateTv.setText("검색 중..");
+                    break;
+                case BluetoothDevice.ACTION_FOUND:
+                    BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                    if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                        onBluetoothConnectAccess();
+                        return;
+                    }
+                    String deviceName = device.getName();
+                    String deviceHardwareAddress = device.getAddress();
+                    btArrayAdapter.add(deviceName + "\n" + deviceHardwareAddress);
+                    deviceAddressArray.add(deviceHardwareAddress);
+                    btArrayAdapter.notifyDataSetChanged();
+                    break;
+                case BluetoothAdapter.ACTION_DISCOVERY_FINISHED:
+                    stateTv.setText("검색 완료");
+                    searchBtn.setEnabled(true);
+                    break;
+            }
         }
+    };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        getActivity().unregisterReceiver(receiver);
+    }
+
+    public class myOnItemClickListener implements AdapterView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Toast.makeText(getActivity(), btArrayAdapter.getItem(position), Toast.LENGTH_SHORT).show();
+            stateTv.setText("연결 중..");
+            final String name = btArrayAdapter.getItem(position);
+            final String address = deviceAddressArray.get(position);
+            boolean flag = true;
+            BluetoothDevice device = btAdapter.getRemoteDevice(address);
+            try {
+                btSocket = createBluetoothSocket(device);
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    onBluetoothConnectAccess();
+                }
+                btSocket.connect();
+            } catch (IOException e) {
+                flag = false;
+                stateTv.setText("연결에 실패했습니다.");
+                e.printStackTrace();
+            }
+            if (flag) {
+                stateTv.setText(name + " 기기와 연결되었습니다.");
+                connectedThread = new ConnectedThread(btSocket);
+                connectedThread.start();
+            }
+        }
+    }
+
+    private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
+        try {
+            final Method m = device.getClass().getMethod("createInsecureRfcommSocketToServiceRecord", UUID.class);
+            return (BluetoothSocket) m.invoke(device, BT_MODULE_UUID);
+        } catch (Exception e) {
+            Log.e(TAG, "Could not create Insecure RFComm Connection", e);
+        }
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+            onBluetoothScanAccess();
+        }
+        return device.createRfcommSocketToServiceRecord(BT_MODULE_UUID);
     }
 }
