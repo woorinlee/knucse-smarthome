@@ -16,6 +16,9 @@ drawable ic_lock_96
 id bottom_nav
 id clockBtn
 id deviceList
+id dlBtn
+id dlEt
+id dlStateTv
 id doorlockBtn
 id frame1
 id frame2
@@ -30,6 +33,7 @@ id tab1
 id tab2
 id tab3
 id tab4
+id testTv
 layout activity_main
 menu bottom_menu
 mipmap ic_launcher

@@ -1,118 +1,114 @@
 [
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable_ic_lock_96.png.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/drawable/ic_lock_96.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\menu_bottom_menu.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\menu\\bottom_menu.xml"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/xml_data_extraction_rules.xml.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\layout\\activity_main.xml"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-xxxhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-hdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-hdpi\\ic_launcher_background.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-mdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-mdpi\\ic_launcher_background.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-hdpi_ic_launcher_background.png.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-hdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable_ic_bluetooth_96.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\drawable\\ic_bluetooth_96.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable_ic_clock_96.png.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/drawable/ic_clock_96.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-anydpi-v21_ic_launcher_background.xml.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-anydpi-v21/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-xxhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-xxhdpi\\ic_launcher_background.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/menu_bottom_menu.xml.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/menu/bottom_menu.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-ldpi_ic_launcher_background.png.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-ldpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable_ic_bluetooth_96.png.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/drawable/ic_bluetooth_96.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-anydpi-v21_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-anydpi-v21\\ic_launcher_background.xml"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\xml\\data_extraction_rules.xml"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-xhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-xhdpi\\ic_launcher_background.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-xhdpi_ic_launcher_background.png.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-xhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable_ic_clock_96.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\drawable\\ic_clock_96.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-xxhdpi_ic_launcher_background.png.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-xxhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\xml\\backup_rules.xml"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable_ic_light_96.png.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/drawable/ic_light_96.png"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-xxxhdpi\\ic_launcher_background.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/xml_backup_rules.xml.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable_ic_light_96.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\drawable\\ic_light_96.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.lh089.smarthome04.app-main-27:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
         "merged": "com.lh089.smarthome04.app-merged_res-25:/layout_activity_main.xml.flat",
         "source": "com.lh089.smarthome04.app-main-27:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable-ldpi_ic_launcher_background.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-pngs-20:\\drawable-ldpi\\ic_launcher_background.png"
-    },
-    {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-merged_res-25:\\drawable_ic_lock_96.png.flat",
-        "source": "C:\\Users\\lenya\\.gradle\\daemon\\7.3.3\\com.lh089.smarthome04.app-main-27:\\drawable\\ic_lock_96.png"
+        "merged": "com.lh089.smarthome04.app-merged_res-25:/drawable-mdpi_ic_launcher_background.png.flat",
+        "source": "com.lh089.smarthome04.app-pngs-20:/drawable-mdpi/ic_launcher_background.png"
     }
 ]
