@@ -2642,6 +2642,9 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id clockBtn
+id clockEt
+id clockSendBtn
+id clockStateTv
 id clockwise
 id closest
 id collapseActionView
@@ -2683,8 +2686,8 @@ id disableScroll
 id disjoint
 id dlBtn
 id dlEt
+id dlSendBtn
 id dlStateTv
-id doorlockBtn
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2772,6 +2775,9 @@ id left
 id leftToRight
 id legacy
 id lightBtn
+id lightEt
+id lightSendBtn
+id lightStateTv
 id line1
 id line3
 id linear
@@ -2967,6 +2973,8 @@ id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
+id test2Tv
+id test3Tv
 id testTv
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint

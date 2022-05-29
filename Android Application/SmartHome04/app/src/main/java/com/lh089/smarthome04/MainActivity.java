@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     UUID BT_MODULE_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
 
     TextView stateTv, searchTv;
-    Button searchBtn, doorlockBtn, lightBtn, clockBtn, dlBtn;
-    EditText dlEt;
+    Button searchBtn, dlSendBtn, dlBtn, lightSendBtn, lightBtn, clockSendBtn, clockBtn;
+    EditText dlEt, lightEt, clockEt;
     ListView pairedDeviceList, deviceList;
 
     BluetoothAdapter btAdapter;
@@ -78,12 +78,16 @@ public class MainActivity extends AppCompatActivity {
         searchTv = (TextView) findViewById(R.id.searchTv);
 
         searchBtn = (Button) findViewById(R.id.searchBtn);
-        doorlockBtn = (Button) findViewById(R.id.doorlockBtn);
-        lightBtn = (Button) findViewById(R.id.lightBtn);
-        clockBtn = (Button) findViewById(R.id.clockBtn);
+        dlSendBtn = (Button) findViewById(R.id.dlSendBtn);
         dlBtn = (Button) findViewById(R.id.dlBtn);
+        lightSendBtn = (Button) findViewById(R.id.lightSendBtn);
+        lightBtn = (Button) findViewById(R.id.lightBtn);
+        clockSendBtn = (Button) findViewById(R.id.clockSendBtn);
+        clockBtn = (Button) findViewById(R.id.clockBtn);
 
         dlEt = (EditText) findViewById(R.id.dlEt);
+        lightEt = (EditText) findViewById(R.id.lightEt);
+        clockEt = (EditText) findViewById(R.id.clockEt);
 
         pairedDeviceList = (ListView) findViewById(R.id.pairedDeviceList);
         deviceList = (ListView) findViewById(R.id.deviceList);
@@ -143,8 +147,8 @@ public class MainActivity extends AppCompatActivity {
                 btAdapter.startDiscovery();
             }
         });
-        
-        doorlockBtn.setOnClickListener(new View.OnClickListener() {
+
+        dlSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // 리스트에서 도어락 이름의 BT 기기 연결
@@ -177,23 +181,71 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        
+
+        lightSendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // 리스트에서 조명 이름의 BT 기기 연결
+                // 작동 신호 전송
+                String lightName = "LHSS01";
+                int lightNum = 0;
+                TextView test2Tv = (TextView) findViewById(R.id.test2Tv);
+                int tempArrayCount = btPairedArrayAdapter.getCount();
+                for (int i = 0; i < tempArrayCount ; i++) {
+                    if (btPairedArrayAdapter.getItem(i).equals(lightName)) {
+                        lightNum = i;
+                    }
+                }
+                test2Tv.setText(lightName + "의 번호는 " + Integer.toString(lightNum + 1) + "입니다.");
+                searchDevice(lightNum, 1);
+            }
+        });
         lightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "조명", Toast.LENGTH_SHORT).show();
-                // 리스트에서 조명 이름의 BT 기기 연결
-                // 작동 신호 전송
+                String lightValue = lightEt.getText().toString();
+                if (!lightValue.equals("")) {
+                    lightValue = lightValue.replaceAll(" ", "");
+                    Toast.makeText(MainActivity.this, lightValue, Toast.LENGTH_SHORT).show();
+                    lightEt.setText("");
+                    if (connectedThread != null) {
+                        connectedThread.write(lightValue + "\n");
+                    }
+                }
             }
         });
-        
-        clockBtn.setOnClickListener(new View.OnClickListener() {
+
+        clockSendBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "시계", Toast.LENGTH_SHORT).show();
                 // 리스트에서 시계 이름의 BT 기기 연결
                 // 기기로부터 신호 전달받음
                 // 전달받은 신호 TextView에 출력
+                String clockName = "LHTC01";
+                int clockNum = 0;
+                TextView test3Tv = (TextView) findViewById(R.id.test3Tv);
+                int tempArrayCount = btPairedArrayAdapter.getCount();
+                for (int i = 0; i < tempArrayCount ; i++) {
+                    if (btPairedArrayAdapter.getItem(i).equals(clockName)) {
+                        clockNum = i;
+                    }
+                }
+                test3Tv.setText(clockName + "의 번호는 " + Integer.toString(clockNum + 1) + "입니다.");
+                searchDevice(clockNum, 1);
+            }
+        });
+        clockBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String clockValue = clockEt.getText().toString();
+                if (!clockValue.equals("")) {
+                    clockValue = clockValue.replaceAll(" ", "");
+                    Toast.makeText(MainActivity.this, clockValue, Toast.LENGTH_SHORT).show();
+                    clockEt.setText("");
+                    if (connectedThread != null) {
+                        connectedThread.write(clockValue + "\n");
+                    }
+                }
             }
         });
 
@@ -269,16 +321,22 @@ public class MainActivity extends AppCompatActivity {
     // 등록된 기기 목록에서 찾기 함수
 
     public void searchDevice(int position, int frameNum) {
-        TextView tempStateTv = (TextView) findViewById(R.id.dlStateTv);
         switch (frameNum) {
             case 1:
-                tempStateTv = (TextView) findViewById(R.id.dlStateTv);
+                TextView dlStateTv = (TextView) findViewById(R.id.dlStateTv);
+                onConnectDevice(position, dlStateTv);
             case 2:
-                //tempStateTv = (TextView) findViewById(R.id.dlStateTv);
+                TextView lightStateTv = (TextView) findViewById(R.id.lightStateTv);
+                onConnectDevice(position, lightStateTv);
             case 3:
-                //tempStateTv = (TextView) findViewById(R.id.dlStateTv);
+                TextView clockStateTv = (TextView) findViewById(R.id.clockStateTv);
+                onConnectDevice(position, clockStateTv);
         }
+    }
 
+    // 블루투스 기기 연결 함수
+
+    public void onConnectDevice(int position, TextView tv) {
         final String name = btPairedArrayAdapter.getItem(position);
         final String address = deviceAddressArray.get(position);
         boolean flag = true;
@@ -291,11 +349,11 @@ public class MainActivity extends AppCompatActivity {
             btSocket.connect();
         } catch (IOException e) {
             flag = false;
-            tempStateTv.setText("연결에 실패했습니다.");
+            tv.setText("연결에 실패했습니다.");
             e.printStackTrace();
         }
         if (flag) {
-            tempStateTv.setText(name + " 기기와 연결되었습니다.");
+            tv.setText(name + " 기기와 연결되었습니다.");
             connectedThread = new ConnectedThread(btSocket);
             connectedThread.start();
             onSearchPairedBluetoothDevice();

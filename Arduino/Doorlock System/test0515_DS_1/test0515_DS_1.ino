@@ -151,6 +151,7 @@ void loop() {
   if (openButton == LOW){ 
     positive_signal();
     get_change_password();
+    correct_password();
     String fpValue;
     for (int i = 8; i < 12; i++) {
       fpValue += (char) EEPROM.read(i);
@@ -187,8 +188,8 @@ void loop() {
       Serial.println("Bluetooth Value : " + btTemp);
     }
     if (btTemp == fpTmp) {
-        positive_signal();
         Serial.println("Finger Print is Correct!");
+        correct_password();
     }
   }
   

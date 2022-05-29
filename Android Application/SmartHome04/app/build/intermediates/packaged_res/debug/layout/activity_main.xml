@@ -72,7 +72,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/frame2"
-        android:visibility="visible" >
+        android:visibility="gone" >
 
         <TextView
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/doorlockBtn"
+            android:id="@+id/dlSendBtn"
             android:text="잠금해제" />
 
         <TextView
@@ -129,8 +129,34 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lightBtn"
+            android:id="@+id/lightSendBtn"
             android:text="조명" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:textSize="15dp"
+            android:id="@+id/test2Tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="state"
+            android:textSize="15dp"
+            android:id="@+id/lightStateTv" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lightEt"
+            android:hint="input code" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전송"
+            android:id="@+id/lightBtn" />
     </LinearLayout>
 
     <LinearLayout
@@ -149,8 +175,34 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/clockBtn"
+            android:id="@+id/clockSendBtn"
             android:text="조회" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="test"
+            android:textSize="15dp"
+            android:id="@+id/test3Tv" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="state"
+            android:textSize="15dp"
+            android:id="@+id/clockStateTv" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/clockEt"
+            android:hint="input code" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="전송"
+            android:id="@+id/clockBtn" />
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
