@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
 MERGED from [com.google.android.material:material:1.6.0] C:\Users\lenya\.gradle\caches\transforms-3\1217d3aa52fa78bda9a0244b3a55003a\transformed\material-1.6.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\lenya\.gradle\caches\transforms-3\af607507a3d3d50a4db50c5cd4e7b0c6\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.1] C:\Users\lenya\.gradle\caches\transforms-3\3b1bc201b3bca652ca8cba6f27421397\transformed\appcompat-1.4.1\AndroidManifest.xml:17:1-24:12
@@ -43,22 +43,22 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\lenya\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\lenya\.gradle\caches\transforms-3\01bc8368ad5575d4d6f30c21d182f95c\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\lenya\.gradle\caches\transforms-3\72f1940f015bcc005a737b3aab30d906\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\lenya\.gradle\caches\transforms-3\e36aaea95b1e10850d139e7025f21ff0\transformed\annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
-INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
+INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
 	package
 		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:4:5-36
 		INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
 		INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-36:12
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:1-39:12
 		INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:2:11-69
@@ -90,8 +90,16 @@ uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:13:5-81
 	android:name
 		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:13:22-78
+uses-permission#android.permission.USE_BIOMETRIC
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:15:5-72
+	android:name
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:15:22-69
+uses-permission#android.permission.USE_FINGERPRINT
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:16:5-74
+	android:name
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:16:22-71
 application
-ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:15:5-34:19
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:18:5-37:19
 MERGED from [com.google.android.material:material:1.6.0] C:\Users\lenya\.gradle\caches\transforms-3\1217d3aa52fa78bda9a0244b3a55003a\transformed\material-1.6.0\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.0] C:\Users\lenya\.gradle\caches\transforms-3\1217d3aa52fa78bda9a0244b3a55003a\transformed\material-1.6.0\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\lenya\.gradle\caches\transforms-3\af607507a3d3d50a4db50c5cd4e7b0c6\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -109,39 +117,39 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\lenya\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\lenya\.gradle\caches\transforms-3\d8338c189490aee58604e111af57865f\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:22:9-35
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:25:9-35
 	android:label
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:20:9-41
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:23:9-41
 	android:fullBackupContent
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:18:9-54
-	android:roundIcon
 		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:21:9-54
+	android:roundIcon
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:24:9-54
 	tools:targetApi
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:24:9-29
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:27:9-29
 	android:icon
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:19:9-43
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:22:9-43
 	android:allowBackup
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:16:9-35
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:23:9-49
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:26:9-49
 	android:dataExtractionRules
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:17:9-65
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:20:9-65
 activity#com.lh089.smarthome04.MainActivity
-ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:25:9-33:20
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:28:9-36:20
 	android:exported
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:27:13-36
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:30:13-36
 	android:name
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:26:13-41
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:29:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:28:13-32:29
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:31:13-35:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:29:17-69
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:32:17-69
 	android:name
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:29:25-66
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:31:17-77
+ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:34:17-77
 	android:name
-		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:31:27-74
+		ADDED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml:34:27-74
 uses-sdk
 INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\lenya\AndroidStudioProjects\SmartHome04\app\src\main\AndroidManifest.xml

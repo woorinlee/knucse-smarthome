@@ -21,6 +21,8 @@ id clockStateTv
 id deviceList
 id dlBtn
 id dlEt
+id dlFingerPrintBtn
+id dlFingerPrintTv
 id dlSendBtn
 id dlStateTv
 id frame1
@@ -39,6 +41,7 @@ id tab1
 id tab2
 id tab3
 id tab4
+id tempFingerPrintTv
 id test2Tv
 id test3Tv
 id testTv

@@ -81,10 +81,10 @@
             android:textSize="25dp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/dlSendBtn"
-            android:text="잠금해제" />
+            android:text="시스템 연결" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -111,6 +111,26 @@
             android:layout_height="wrap_content"
             android:text="전송"
             android:id="@+id/dlBtn" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="지문인식"
+            android:id="@+id/dlFingerPrintBtn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="지문인식 버튼을 눌러주세요."
+            android:gravity="center"
+            android:id="@+id/dlFingerPrintTv" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="지문인식 상태"
+            android:gravity="center"
+            android:id="@+id/tempFingerPrintTv" />
     </LinearLayout>
 
     <LinearLayout
@@ -127,10 +147,10 @@
             android:textSize="25dp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/lightSendBtn"
-            android:text="조명" />
+            android:text="시스템 연결" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -173,10 +193,10 @@
             android:textSize="25dp" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/clockSendBtn"
-            android:text="조회" />
+            android:text="시스템 연결" />
 
         <TextView
             android:layout_width="wrap_content"

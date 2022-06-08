@@ -72,7 +72,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/frame2"
-        android:visibility="gone" >
+        android:visibility="visible" >
 
         <TextView
             android:layout_width="match_parent"
@@ -111,6 +111,26 @@
             android:layout_height="wrap_content"
             android:text="전송"
             android:id="@+id/dlBtn" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="지문인식"
+            android:id="@+id/dlFingerPrintBtn" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="지문인식 버튼을 눌러주세요."
+            android:gravity="center"
+            android:id="@+id/dlFingerPrintTv" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="지문인식 상태"
+            android:gravity="center"
+            android:id="@+id/tempFingerPrintTv" />
     </LinearLayout>
 
     <LinearLayout
