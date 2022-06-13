@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/tab1"
+        android:enabled="true"
+        android:icon="@drawable/ic_lock_96"
+        android:title="도어락"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/tab2"
+        android:enabled="true"
+        android:icon="@drawable/ic_light_96"
+        android:title="조명"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/tab3"
+        android:enabled="true"
+        android:icon="@drawable/ic_clock_96"
+        android:title="시계"
+        app:showAsAction="ifRoom" />
+</menu>
