@@ -5,7 +5,7 @@
       <map>
         <entry key="..\:/Users/lenya/Documents/AndroidStudioProject/SmartHome05/app/src/main/res/drawable/bottom_menu_selector.xml" value="0.1105" />
         <entry key="..\:/Users/lenya/Documents/AndroidStudioProject/SmartHome05/app/src/main/res/drawable/bottom_nav_selector.xml" value="0.1105" />
-        <entry key="..\:/Users/lenya/Documents/AndroidStudioProject/SmartHome05/app/src/main/res/layout/activity_main.xml" value="0.16203703703703703" />
+        <entry key="..\:/Users/lenya/Documents/AndroidStudioProject/SmartHome05/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/lenya/Documents/AndroidStudioProject/SmartHome05/app/src/main/res/layout/toolbar.xml" value="0.17806484295845998" />
         <entry key="..\:/Users/lenya/Documents/AndroidStudioProject/SmartHome05/app/src/main/res/menu/bottom_menu.xml" value="0.2" />
         <entry key="..\:/Users/lenya/Documents/AndroidStudioProject/SmartHome05/app/src/main/res/menu/toolbar_menu.xml" value="0.273828125" />
@@ -18,5 +18,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.16203703703703703" />
+      </ProjectState>
+    </option>
   </component>
 </project>

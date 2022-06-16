@@ -12,69 +12,170 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/frame1"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="75dp" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="1" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/frame2"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="75dp" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/frame3"
-        android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginBottom="75dp" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="3" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/frame4"
         android:orientation="vertical"
-        android:visibility="gone"
         android:layout_marginTop="75dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginBottom="75dp" >
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="4" />
+            android:orientation="vertical"
+            android:layout_marginBottom="25dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="블루투스 상태"
+                android:textSize="25dp"
+                android:textColor="#666666"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:id="@+id/bluetoothStatusTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="블루투스 연결 상태"
+                android:textSize="12dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame1"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도어락 시스템"
+                android:textSize="20dp"
+                android:textColor="#666666"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:id="@+id/dsStatusTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도어락 시스템 연결 상태"
+                android:textSize="12dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="도어락을 잠금 해제하시려면 지문인식 버튼을 눌러주세요."
+                android:textSize="12dp"
+                android:layout_marginBottom="15dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="지문 인식"
+                android:id="@+id/dsFPBtn"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지문인식 상태"
+                android:layout_gravity="center"
+                android:textSize="12dp"
+                android:id="@+id/dsFPTv"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame2"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조명 시스템"
+                android:textSize="20dp"
+                android:textColor="#666666"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:id="@+id/lsStatusTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="조명 시스템 연결 상태"
+                android:textSize="12dp"
+                android:layout_marginBottom="15dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lsUpBtn"
+                android:text="위 버튼" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lsDownBtn"
+                android:text="아래 버튼" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/frame3"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="탁상시계 시스템"
+                android:textSize="20dp"
+                android:textColor="#666666"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:id="@+id/tsStatusTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="탁상시계 시스템 연결 상태"
+                android:textSize="12dp"
+                android:layout_marginBottom="25dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="지금 내 방은?"
+                android:textSize="20dp"
+                android:textColor="#666666"
+                android:layout_marginBottom="15dp" />
+
+            <TextView
+                android:id="@+id/test31tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="습도 : 00.00%"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/test32tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="온도 :  00.00°C"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:id="@+id/test33tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="미세먼지(PM25) : 00.00㎍/㎥"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp" />
+        </LinearLayout>
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
